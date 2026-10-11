@@ -1,0 +1,165 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Contacto | HealthyFit</title>
+    <meta name="description" content="Ponte en contacto con el equipo de HealthyFit y solicita tu primera consulta sobre entrenamiento o nutrición.">
+    <link rel="stylesheet" href="css/estilos.css"> 
+</head>
+
+<body> 
+    <header>
+        <div class="contenedor">
+            <a href="index.html" class="logo-header">
+                <img src="img/logo.png" alt="Logo HealthyFit">
+                <span>HEALTHYFIT</span>
+            </a>
+            <input type="checkbox" id="menu-bar">
+            <label class="icon-menu" for="menu-bar"></label>
+            <nav class="menu">  
+                <a href="index.html">INICIO</a>
+                <a href="servicios.html">SERVICIOS</a>
+                <a href="nosotros.html">NOSOTROS</a>
+                <a href="blog.html">BLOG</a>
+                <a href="contacto.html" class="activo">CONTACTO</a>
+            </nav> 
+        </div> 
+    </header>
+
+    <main> 
+        <section id="contacto">
+            <div class="contenedor">
+                <h2>CONTÁCTANOS</h2>
+                <p class="texto-intro">¿Tienes dudas o deseas iniciar un plan de entrenamiento o nutrición? Envíanos un mensaje.</p>
+                
+                <div class="contacto-wrapper">
+                    <!-- Información de Contacto, Horarios y Redes -->
+                    <div class="contacto-info">
+                        <div class="contacto-caja">
+                            <span>📍</span>
+                            <h3>Ubicación</h3>
+                            <p>Av. Saludable 456, Ciudad, País</p>
+                        </div>
+                        <div class="contacto-caja">
+                            <span>📞</span>
+                            <h3>Teléfono</h3>
+                            <p>+51 902 458 153</p>
+                        </div>
+                        <div class="contacto-caja">
+                            <span>📧</span>
+                            <h3>Correo</h3>
+                            <p>contacto@healthyfit.com</p>
+                        </div>
+                        <!-- NUEVO: Horario de Atención -->
+                        <div class="contacto-caja">
+                            <span>⏰</span>
+                            <h3>Horario de Atención</h3>
+                            <p>Lunes a Viernes: 6:00 a.m. - 9:00 p.m.<br>Sábados: 8:00 a.m. - 2:00 p.m.</p>
+                        </div>
+                        <!-- NUEVO: Redes Sociales -->
+                        <div class="contacto-caja">
+                            <span>🌐</span>
+                            <h3>Síguenos en Redes</h3>
+                            <div class="sociales" style="justify-content: flex-start; margin-top: 5px;"> 
+                                <a class="icon-facebook-squared" href="#" aria-label="Facebook" style="font-size: 1rem; padding: 6px 10px;">f</a>
+                                <a class="icon-twitter-squared" href="#" aria-label="Twitter" style="font-size: 1rem; padding: 6px 10px;">t</a> 
+                                <a class="icon-gplus" href="#" aria-label="Instagram" style="font-size: 1rem; padding: 6px 10px;">in</a> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formulario de Contacto -->
+                    <div class="contenedor-formulario">
+                        <form class="formulario-contacto" id="contacto-form">
+                            <h3>Envíanos un mensaje</h3>
+                            
+                            <div class="campo-grupo">
+                                <label for="nombre">Nombre completo</label>
+                                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                            </div>
+
+                            <div class="filtro-dos-campos">
+                                <div class="campo-grupo">
+                                    <label for="email">Correo electrónico</label>
+                                    <input type="email" id="email" name="email" placeholder="ejemplo@gmail.com" required>
+                                </div>
+
+                                <div class="campo-grupo">
+                                    <label for="telefono">Teléfono / WhatsApp</label>
+                                    <input type="tel" id="telefono" name="telefono" placeholder="+51 900 000 000">
+                                </div>
+                            </div>
+
+                            <div class="campo-grupo">
+                                <label for="asunto">Asunto</label>
+                                <select id="asunto" name="asunto" required>
+                                    <option value="" disabled selected>Selecciona una opción</option>
+                                    <option value="entrenamiento">Consulta sobre Entrenamiento</option>
+                                    <option value="nutricion">Consulta sobre Nutrición</option>
+                                    <option value="bienestar">Planes de Bienestar</option>
+                                    <option value="otro">Otro asunto</option>
+                                </select>
+                            </div>
+
+                            <div class="campo-grupo">
+                                <label for="mensaje">Mensaje</label>
+                                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu consulta aquí..." required></textarea>
+                            </div>
+
+                            <button type="submit" id="boton" class="btn-enviar">Enviar Mensaje</button>
+                            <p id="respuesta" style="margin-top: 10px; font-weight: bold;"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main> 
+
+    <footer> 
+        <div class="contenedor"> 
+            <h3>HealthyFit</h3> 
+            <p>Promoviendo el bienestar a través de servicios de entrenamiento, nutrición y asesoría.</p> 
+            <p class="copy">&copy; 2026 HealthyFit. Todos los derechos reservados.</p> 
+        </div> 
+    </footer> 
+
+    <!-- Script de EmailJS y envío de formulario -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        emailjs.init({ publicKey: "ZgK8tF8ioS-jp8pzQ" });
+
+        const URL_GOOGLE = "https://script.google.com/macros/s/AKfycbyP6e_qF5f8WhXRCWOJbnxegPvlDztqi1HD1tHH0iWaGdZkWwG24vkOHAYT0iw_Fi_2/exec";
+        const formulario = document.getElementById("contacto-form");
+        const boton = document.getElementById("boton");
+        const respuesta = document.getElementById("respuesta");
+
+        formulario.addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            boton.disabled = true;
+            boton.textContent = "Enviando...";
+            respuesta.textContent = "";
+
+            try {
+                const formData = new FormData(formulario);
+                const peticionGoogle = fetch(URL_GOOGLE, { method: "POST", body: formData });
+                const peticionEmailJS = emailjs.sendForm("service_isge5er", "template_9o73qpc", formulario);
+
+                await Promise.all([peticionGoogle, peticionEmailJS]);
+
+                respuesta.textContent = "¡Mensaje enviado con éxito!";
+                respuesta.style.color = "green";
+                formulario.reset();
+            } catch (error) {
+                console.error("Error al procesar el envío:", error);
+                respuesta.textContent = "Ocurrió un error al enviar el mensaje. Intenta nuevamente.";
+                respuesta.style.color = "red";
+            } finally {
+                boton.disabled = false;
+                boton.textContent = "Enviar Mensaje";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,535 @@
+/* ==========================================
+   ESTILOS GENERALES Y RESET
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e2e8f0;
+    background-color: #121c14; /* Fondo general verde oscuro elegante */
+    line-height: 1.6;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* ==========================================
+   HEADER Y NAVEGACIÓN
+   ========================================== */
+header {
+    background: #192b1b;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #28442b;
+}
+
+header .contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo-header {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+}
+
+.logo-header img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.logo-header span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #a3e635;
+    letter-spacing: 1px;
+}
+
+.menu {
+    display: flex;
+    gap: 25px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #cbd5e1;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover,
+.menu a.activo {
+    color: #a3e635;
+}
+
+#menu-bar,
+.icon-menu {
+    display: none;
+}
+
+/* ==========================================
+   SECCIÓN BANNER / INICIO
+   ========================================== */
+#banner {
+    position: relative;
+    height: 80vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    background-color: #121c14;
+}
+
+#banner img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    filter: brightness(0.75) contrast(1.05);
+}
+
+#banner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(18, 28, 20, 0.55);
+    z-index: 2;
+}
+
+.banner-texto {
+    position: relative;
+    z-index: 3;
+}
+
+.banner-texto h2 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    color: #ffffff;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.banner-texto a {
+    display: inline-block;
+    background-color: #22c55e;
+    color: #ffffff !important;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    margin-top: 30px;
+}
+
+.banner-texto a:hover {
+    background-color: #16a34a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* ==========================================
+   SECCIONES GENERALES (FONDOS OSCUROS GARANTIZADOS)
+   ========================================== */
+section {
+    padding: 60px 0;
+    background-color: #121c14 !important; /* Garantiza fondo oscuro */
+}
+
+section:nth-child(even) {
+    background-color: #172519 !important; /* Fondo con tono sutil para variaciones */
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #a3e635; /* Verde brillante vistoso para títulos */
+    margin-bottom: 15px;
+}
+
+.texto-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    color: #cbd5e1;
+    font-size: 1.05rem;
+}
+
+/* ==========================================
+   SERVICIOS GRID (Tarjetas)
+   ========================================== */
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.servicio {
+    background: #1f3522;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    border: 1px solid #2d4a31;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.servicio:hover {
+    transform: translateY(-5px);
+    border-color: #22c55e;
+}
+
+.servicio span {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.servicio h3 {
+    font-size: 1.25rem;
+    color: #a3e635;
+    margin-bottom: 10px;
+}
+
+.servicio p {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+}
+
+/* ==========================================
+   NOSOTROS CONTENIDO (Misión y Visión)
+   ========================================== */
+.nosotros-contenido {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.caja-nosotros {
+    background: #1f3522;
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 5px solid #22c55e;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    border-top: 1px solid #2d4a31;
+    border-right: 1px solid #2d4a31;
+    border-bottom: 1px solid #2d4a31;
+}
+
+.caja-nosotros h3 {
+    color: #a3e635;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.caja-nosotros p {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+}
+
+/* ==========================================
+   PRODUCTOS / PROGRAMAS DESTACADOS / BLOG GRID
+   ========================================== */
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.producto {
+    background: #1f3522; /* Fondo tarjeta en verde oscuro */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    border: 1px solid #2d4a31;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+    border-color: #22c55e;
+}
+
+.producto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    filter: brightness(0.9);
+}
+
+.producto-contenido {
+    padding: 20px;
+    background: #1f3522; /* Garantiza fondo oscuro interno */
+}
+
+.producto-contenido h3 {
+    font-size: 1.2rem;
+    color: #a3e635;
+    margin-bottom: 10px;
+}
+
+.producto-contenido p {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.producto-contenido a {
+    display: inline-block;
+    color: #22c55e;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.producto-contenido a:hover {
+    text-decoration: underline;
+    color: #a3e635;
+}
+
+/* ==========================================
+   CONTACTO (Wrapper + Formulario)
+   ========================================== */
+.contacto-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+    background: #1f3522;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    border: 1px solid #2d4a31;
+}
+
+.contacto-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contacto-caja {
+    background: #1f3522;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #2d4a31;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.contacto-caja:hover {
+    border-color: #22c55e;
+    transform: translateY(-3px);
+}
+
+.contacto-caja span {
+    font-size: 1.6rem;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.contacto-caja h3 {
+    font-size: 1.15rem;
+    color: #a3e635;
+    margin-bottom: 5px;
+}
+
+.contacto-caja p {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+}
+
+.formulario-contacto h3 {
+    font-size: 1.3rem;
+    color: #a3e635;
+    margin-bottom: 20px;
+}
+
+.campo-grupo {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.campo-grupo label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #e2e8f0;
+}
+
+.campo-grupo input,
+.campo-grupo select,
+.campo-grupo textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #2d4a31;
+    background-color: #121c14;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.campo-grupo input:focus,
+.campo-grupo select:focus,
+.campo-grupo textarea:focus {
+    border-color: #22c55e;
+}
+
+.filtro-dos-campos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.btn-enviar {
+    background-color: #22c55e;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s ease;
+}
+
+.btn-enviar:hover {
+    background-color: #16a34a;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+footer {
+    background-color: #0b120d;
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 0;
+    border-top: 1px solid #1f3522;
+}
+
+footer h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #a3e635;
+}
+
+footer p {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.sociales {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.sociales a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    background: #1f3522;
+    padding: 8px 12px;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.sociales a:hover {
+    background: #22c55e;
+}
+
+.copy {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+@media (max-width: 768px) {
+    .menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #192b1b;
+        flex-direction: column;
+        align-items: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    .menu a {
+        padding: 15px 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #28442b;
+    }
+
+    #menu-bar:checked ~ .menu {
+        max-height: 350px;
+    }
+
+    .icon-menu {
+        display: block;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: #ffffff;
+    }
+
+    .icon-menu::before {
+        content: "☰";
+    }
+
+    .contacto-wrapper {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .filtro-dos-campos {
+        grid-template-columns: 1fr;
+    }
+
+    .banner-texto h2 {
+        font-size: 2rem;
+    }
+}
